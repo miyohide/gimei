@@ -26,6 +26,12 @@ describe Gimei do
     end
   end
 
+  describe '.kanji' do
+    it '全角文字とスペースが返ること' do
+      Gimei.kanji.must_match /\A[#{Moji.zen}\s]+\z/
+    end
+  end
+
   describe '#hiragana' do
     before { @name = Gimei.new }
 
